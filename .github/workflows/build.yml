@@ -2,7 +2,7 @@ name: Build Windows EXE
 
 on:
   push:
-    branches: [main]  # ← 必要に応じて変更
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
         pyinstaller main.py --onefile --noconsole --icon=icon.ico
 
     - name: 📦 Upload EXE artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: built-exe
         path: dist/main.exe
